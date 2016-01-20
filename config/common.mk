@@ -86,7 +86,8 @@ PRODUCT_PACKAGES += \
 # Extra Optional packages
 PRODUCT_PACKAGES += \
     LatinIME \
-    BluetoothExt
+    BluetoothExt \
+    NovaLauncher
 
 # Extra tools
 PRODUCT_PACKAGES += \
