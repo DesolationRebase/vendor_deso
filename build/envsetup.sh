@@ -189,3 +189,4 @@ deso_append_hmm "desoremote" "Add a git remote for matching Desolation repositor
 deso_append_hmm "cmremote" "Add a git remote for matching CM repository"
 deso_append_hmm "aospremote" "Add git remote for matching AOSP repository"
 deso_append_hmm "cafremote" "Add git remote for matching CodeAurora repository."
+export ANDROID_COMPILE_WITH_JACK=false
