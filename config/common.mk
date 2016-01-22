@@ -88,7 +88,8 @@ PRODUCT_PACKAGES += \
     LatinIME \
     BluetoothExt \
     NovaLauncher \
-    DesolatedCore
+    DesolatedCore \
+    DesolatedDelta
 
 # Extra tools
 PRODUCT_PACKAGES += \
