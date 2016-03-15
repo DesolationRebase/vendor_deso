@@ -152,8 +152,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.modversion=$(DESO_MOD_VERSION) \
     ro.deso.buildtype=$(DESO_BUILD_TYPE)
 
-EXTENDED_POST_PROCESS_PROPS := vendor/deso/tools/process_props.py
-
 # DU Utils Library
 PRODUCT_PACKAGES += \
     org.dirtyunicorns.utils
