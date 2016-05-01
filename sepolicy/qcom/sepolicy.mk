@@ -1,2 +1,2 @@
 BOARD_SEPOLICY_DIRS += \
-    vendor/aospb/sepolicy/qcom
+    vendor/deso/sepolicy/qcom
