@@ -25,10 +25,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.debug.alloc=0
 
 # Backup Tool
+ifneq ($(WITH_GMS),true)
 PRODUCT_COPY_FILES += \
     vendor/deso/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/deso/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/deso/prebuilt/common/bin/50-deso.sh:system/addon.d/50-deso.sh
+    vendor/deso/prebuilt/common/bin/50-candy.sh:system/addon.d/50-candy.sh \
+    vendor/deso/prebuilt/common/bin/blacklist:system/addon.d/blacklist
+endif
+
+# Desolation backuptool
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.desobackuptool.version=mm6.0
 
 # Signature compatibility validation
 PRODUCT_COPY_FILES += \
