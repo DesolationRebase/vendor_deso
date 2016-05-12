@@ -29,7 +29,7 @@ ifneq ($(WITH_GMS),true)
 PRODUCT_COPY_FILES += \
     vendor/deso/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/deso/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/deso/prebuilt/common/bin/50-candy.sh:system/addon.d/50-candy.sh \
+    vendor/deso/prebuilt/common/bin/50-deso.sh:system/addon.d/50-deso.sh \
     vendor/deso/prebuilt/common/bin/blacklist:system/addon.d/blacklist
 endif
 
