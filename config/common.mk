@@ -96,7 +96,8 @@ PRODUCT_PACKAGES += \
     BluetoothExt \
     NovaLauncher \
     DesolatedCore \
-    org.dirtyunicorns.utils
+    org.dirtyunicorns.utils \
+    KernelAdiutor
 #   DesolatedDelta
 
 # Extra tools
