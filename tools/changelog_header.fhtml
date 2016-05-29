@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+<title>DesolationROM Changelog</title>
+<style>
+body {
+background-color: #000000;
+color: white;
+}
+h2, h3, .commit {
+color: #A6A6A6;
+}
+</style>
+</head>
+<body>
+<h1>DesolationROM Changelog</h1>
