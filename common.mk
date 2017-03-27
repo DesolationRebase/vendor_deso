@@ -76,7 +76,8 @@ PRODUCT_PACKAGES += \
     sqlite3 \
     strace \
     Terminal \
-    WallpaperPicker
+    WallpaperPicker \
+    NovaLauncher
 
 # Telephony packages
 PRODUCT_PACKAGES += \
@@ -155,5 +156,34 @@ ifneq ($(TARGET_BUILD_VARIANT),userdebug)
 # Enable ADB authentication
 ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
 endif
+
+# Versioning System
+# Desolation first version.
+PRODUCT_VERSION_MAJOR = 7.1.1
+PRODUCT_VERSION_MINOR = v0.2
+#PRODUCT_VERSION_MAINTENANCE = N
+ifdef DESO_BUILD_EXTRA
+    DESO_POSTFIX := -$(DESO_BUILD_EXTRA)
+else
+    DESO_POSTFIX := -$(shell date +"%Y%m%d-%H%M")
+endif
+
+ifdef DESO_BUILD_TYPE
+    DESO_BUILD_TYPE := $(DESO_BUILD_TYPE)
+else
+    DESO_BUILD_TYPE := PreRelease
+endif
+
+# Set all versions
+DESO_VERSION := Desolation-$(DESO_BUILD)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(DESO_BUILD_TYPE)$(DESO_POSTFIX)
+OTA_VERSION := Desolation-$(DESO_BUILD)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(DESO_BUILD_TYPE)$(DESO_POSTFIX)
+DESO_MOD_VERSION := Desolation-$(DESO_BUILD)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(DESO_BUILD_TYPE)$(DESO_POSTFIX)
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    BUILD_DISPLAY_ID=$(BUILD_ID) \
+    ro.deso.version=$(DESO_VERSION) \
+    ro.deso.otaversion=$(OTA_VERSION) \
+    ro.modversion=$(DESO_MOD_VERSION) \
+    ro.deso.buildtype=$(DESO_BUILD_TYPE)
 
 $(call inherit-product-if-exists, vendor/extra/product.mk)
