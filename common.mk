@@ -55,13 +55,11 @@ PRODUCT_COPY_FILES += \
 # Misc packages
 PRODUCT_PACKAGES += \
     BluetoothExt \
-    Browser \
     libemoji \
     libsepol \
     e2fsck \
     mke2fs \
     tune2fs \
-    bash \
     powertop \
     mount.exfat \
     fsck.exfat \
@@ -153,7 +151,7 @@ endif
 # by default, do not update the recovery with system updates
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.recovery_update=false
 
-ifneq ($(TARGET_BUILD_VARIANT),eng)
+ifneq ($(TARGET_BUILD_VARIANT),userdebug)
 # Enable ADB authentication
 ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
 endif
