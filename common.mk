@@ -20,29 +20,29 @@ PRODUCT_PROPERTY_OVERRIDES += persist.sys.dun.override=0
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/aosp/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/aosp/prebuilt/common/bin/blacklist:system/addon.d/blacklist \
-    vendor/aosp/prebuilt/common/bin/whitelist:system/addon.d/whitelist \
+    vendor/deso/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/deso/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/deso/prebuilt/common/bin/blacklist:system/addon.d/blacklist \
+    vendor/deso/prebuilt/common/bin/whitelist:system/addon.d/whitelist \
 
 # Bootanimation
 PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/media/bootanimation.zip:system/media/bootanimation.zip
+    vendor/deso/prebuilt/common/media/bootanimation.zip:system/media/bootanimation.zip
 
 # init.d support
 PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/bin/sysinit:system/bin/sysinit \
-    vendor/aosp/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
-    vendor/aosp/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
+    vendor/deso/prebuilt/common/bin/sysinit:system/bin/sysinit \
+    vendor/deso/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
+    vendor/deso/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
 
 # Init file
 PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/etc/init.local.rc:root/init.local.rc
+    vendor/deso/prebuilt/common/etc/init.local.rc:root/init.local.rc
 
 # Bring in camera effects
 PRODUCT_COPY_FILES +=  \
-    vendor/aosp/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
-    vendor/aosp/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
+    vendor/deso/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
+    vendor/deso/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -130,22 +130,22 @@ endif
 
 # World APN list
 PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
+    vendor/deso/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
 
 # Selective SPN list for operator number who has the problem.
 PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/etc/selective-spn-conf.xml:system/etc/selective-spn-conf.xml
+    vendor/deso/prebuilt/common/etc/selective-spn-conf.xml:system/etc/selective-spn-conf.xml
 
 PRODUCT_PACKAGE_OVERLAYS += \
-	vendor/aosp/overlay/common
+	vendor/deso/overlay/common
 
 # Proprietary latinime libs needed for Keyboard swyping
 ifneq ($(filter arm64,$(TARGET_ARCH)),)
 PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so
+    vendor/deso/prebuilt/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so
 else
 PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so
+    vendor/deso/prebuilt/common/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so
 endif
 
 # by default, do not update the recovery with system updates
