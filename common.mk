@@ -21,9 +21,7 @@ PRODUCT_PROPERTY_OVERRIDES += persist.sys.dun.override=0
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/deso/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/deso/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/deso/prebuilt/common/bin/blacklist:system/addon.d/blacklist \
-    vendor/deso/prebuilt/common/bin/whitelist:system/addon.d/whitelist \
+    vendor/deso/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions
 
 # init.d support
 PRODUCT_COPY_FILES += \

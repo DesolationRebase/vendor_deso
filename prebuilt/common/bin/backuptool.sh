@@ -32,42 +32,13 @@ restore_addon_d() {
 check_prereq() {
 # If there is no build.prop file the partition is probably empty.
 if [ ! -r /system/build.prop ]; then
-    return 0
+    return 1
 fi
 if ( ! grep -q "^ro.build.version.release=$V.*" /system/build.prop ); then
   echo "Not backing up files from incompatible version: $V"
-  return 0
+  return 1
 fi
-return 1
-}
-
-check_blacklist() {
-  if [ -f /system/addon.d/blacklist ];then
-      ## Discard any known bad backup scripts
-      cd /$1/addon.d/
-      for f in *sh; do
-          s=$(md5sum $f | cut -c-32)
-          grep -q $s /system/addon.d/blacklist && rm -f $f
-      done
-  fi
-}
-
-check_whitelist() {
-  found=0
-  if [ -f /system/addon.d/whitelist ];then
-      ## forcefully keep any version-independent stuff
-      cd /$1/addon.d/
-      for f in *sh; do
-          s=$(md5sum $f | cut -c-32)
-          grep -q $s /system/addon.d/whitelist
-          if [ $? -eq 0 ]; then
-              found=1
-          else
-              rm -f $f
-          fi
-      done
-  fi
-  return $found
+return 0
 }
 
 # Execute /system/addon.d/*.sh scripts with $1 parameter
@@ -83,11 +54,8 @@ case "$1" in
   backup)
     mkdir -p $C
     if check_prereq; then
-        if check_whitelist system; then
-            exit 127
-        fi
+        exit 127
     fi
-    check_blacklist system
     preserve_addon_d
     run_stage pre-backup
     run_stage backup
@@ -95,11 +63,8 @@ case "$1" in
   ;;
   restore)
     if check_prereq; then
-        if check_whitelist tmp; then
-            exit 127
-        fi
+        exit 127
     fi
-    check_blacklist tmp
     run_stage pre-restore
     run_stage restore
     run_stage post-restore
