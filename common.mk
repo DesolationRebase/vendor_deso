@@ -98,9 +98,7 @@ PRODUCT_PACKAGES += \
 # Snapdragon packages
 PRODUCT_PACKAGES += \
     MusicFX \
-    SnapdragonCamera \
-    SnapdragonGallery \
-    SnapdragonMusic
+    Gallery2
 
 # Include explicitly to work around GMS issues
 PRODUCT_PACKAGES += \
