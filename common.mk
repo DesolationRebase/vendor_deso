@@ -72,7 +72,8 @@ PRODUCT_PACKAGES += \
     strace \
     Terminal \
     WallpaperPicker \
-    NovaLauncher
+    NovaLauncher \
+    OpenCamera
 
 # Telephony packages
 PRODUCT_PACKAGES += \
