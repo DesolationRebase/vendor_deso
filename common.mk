@@ -147,8 +147,10 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.recovery_update=false
 
 ifneq ($(TARGET_BUILD_VARIANT),userdebug)
+ifneq ($(TARGET_BUILD_VARIANT),eng)
 # Enable ADB authentication
 ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
+endif
 endif
 
 # Boot animation include
@@ -190,8 +192,8 @@ endif
 
 # Versioning System
 # Desolation first version.
-PRODUCT_VERSION_MAJOR = 7.1.1
-PRODUCT_VERSION_MINOR = v0.2
+PRODUCT_VERSION_MAJOR = 7.1.2
+PRODUCT_VERSION_MINOR = v0.3
 #PRODUCT_VERSION_MAINTENANCE = N
 ifdef DESO_BUILD_EXTRA
     DESO_POSTFIX := -$(DESO_BUILD_EXTRA)
