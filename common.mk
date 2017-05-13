@@ -112,7 +112,8 @@ PRODUCT_PACKAGES += \
 
 # Mms depends on SoundRecorder for recorded audio messages
 PRODUCT_PACKAGES += \
-    SoundRecorder
+    SoundRecorder \
+    OmniSwitch
 
 # Custom off-mode charger
 ifneq ($(WITH_CM_CHARGER),false)
