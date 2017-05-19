@@ -83,7 +83,13 @@ PRODUCT_PACKAGES += \
     telephony-ext
 
 PRODUCT_BOOT_JARS += \
+    org.dirtyunicorns.utils \
     telephony-ext
+
+#DU Utils for DUI
+PRODUCT_PACKAGES += \
+    org.dirtyunicorns.utils
+
 
 # RCS
 PRODUCT_PACKAGES += \
