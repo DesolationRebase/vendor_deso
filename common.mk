@@ -24,6 +24,10 @@ PRODUCT_COPY_FILES += \
     vendor/deso/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/deso/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions
 
+# Substratum Clean Tool
+PRODUCT_COPY_FILES += \
+    vendor/deso/prebuilt/common/bin/substraumclean.sh:install/bin/substraumclean.sh \
+
 # init.d support
 PRODUCT_COPY_FILES += \
     vendor/deso/prebuilt/common/bin/sysinit:system/bin/sysinit \
