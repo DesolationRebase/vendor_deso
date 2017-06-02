@@ -258,5 +258,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 $(call inherit-product-if-exists, vendor/extra/product.mk)
 
-# include definitions for SDCLANG
-include device/qcom/common/sdclang/sdclang.mk
+# Include SDCLANG definitions if it is requested and available
+ifeq ($(HOST_OS),linux)
+    ifneq ($(wildcard vendor/qcom/sdclang-3.8/),)
+        include vendor/deso/sdclang/sdclang.mk
+    endif
+endif

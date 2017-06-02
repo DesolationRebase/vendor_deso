@@ -1,4 +1,4 @@
-﻿ifeq ($(LOCAL_MODULE_CLASS), STATIC_LIBRARIES)
+ifeq ($(LOCAL_MODULE_CLASS), STATIC_LIBRARIES)
 # For STATIC_LIBRARIES we need to use SD LLVM's archiver and archiver flags.
 
 AR := $(SDCLANG_PATH)/llvm-ar
