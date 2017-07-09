@@ -77,7 +77,8 @@ PRODUCT_PACKAGES += \
     Terminal \
     WallpaperPicker \
     NovaLauncher \
-    OpenCamera
+    OpenCamera \
+    OmniJaws
 
 # Telephony packages
 PRODUCT_PACKAGES += \
