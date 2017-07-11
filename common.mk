@@ -77,8 +77,11 @@ PRODUCT_PACKAGES += \
     Terminal \
     WallpaperPicker \
     NovaLauncher \
-    OpenCamera \
     OmniJaws
+
+ifneq($(HAS_DEVICE_CAM),true)
+PRODUCT_PACKAGES += OpenCamera
+endif
 
 # Telephony packages
 PRODUCT_PACKAGES += \
