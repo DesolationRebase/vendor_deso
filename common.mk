@@ -79,7 +79,7 @@ PRODUCT_PACKAGES += \
     NovaLauncher \
     OmniJaws
 
-ifneq($(HAS_DEVICE_CAM),true)
+ifeq ($(HAS_DEVICE_CAM),)
 PRODUCT_PACKAGES += OpenCamera
 endif
 
