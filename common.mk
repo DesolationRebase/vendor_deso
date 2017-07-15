@@ -77,7 +77,9 @@ PRODUCT_PACKAGES += \
     Terminal \
     WallpaperPicker \
     NovaLauncher \
-    OmniJaws
+    OmniJaws \
+    OmniStyle \
+    DesoHeaders
 
 ifeq ($(HAS_DEVICE_CAM),)
 PRODUCT_PACKAGES += OpenCamera
