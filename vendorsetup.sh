@@ -1,11 +1,17 @@
 set_stuff_for_environment
 function deso-sync() {
+
 if [ $ANDROID_BUILD_TOP == null ]; then
 echo ANDROID_BUILD_TOP not defined. Aborting ...
 else
+
 if [ $PWD != $ANDROID_BUILD_TOP ]; then
 cd $ANDROID_BUILD_TOP
 fi
+
+# sync-paths file was obtained using this command
+# grep -r 'remote="deso"' ./manifest | sed 's/" remote.*//' | sed 's/.*path="//' >> vendor/deso/sync-paths 
+
 for line in $(cat vendor/deso/sync-paths) ; do
     cd $line
     repo-compare $line deso n
