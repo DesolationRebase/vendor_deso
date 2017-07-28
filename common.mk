@@ -214,10 +214,26 @@ else
     DESO_POSTFIX := -$(shell date +"%Y%m%d-%H%M")
 endif
 
+ifdef BUILDTYPE_EXPERIMENTAL
+    DESO_BUILD_TYPE := Experimental
+endif
+
+ifdef BUILDTYPE_NIGHTLY
+    DESO_BUILD_TYPE := Nightly
+endif
+
+ifdef BUILDTYPE_WEEKLY
+    DESO_BUILD_TYPE := Weekly
+endif
+
+ifdef BUILDTYPE_RELEASE
+    DESO_BUILD_TYPE := Release
+endif
+
 ifdef DESO_BUILD_TYPE
     DESO_BUILD_TYPE := $(DESO_BUILD_TYPE)
 else
-    DESO_BUILD_TYPE := PreRelease
+    DESO_BUILD_TYPE := Unofficial
 endif
 
 # Set all versions
