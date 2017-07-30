@@ -80,7 +80,7 @@ PRODUCT_PACKAGES += \
     OmniStyle \
     DesoHeaders
 
-ifneq($(HAS_DEVICE_CAM),true)
+ifneq ($(HAS_DEVICE_CAM),true)
 PRODUCT_PACKAGES += OpenCamera
 endif
 
