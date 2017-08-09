@@ -2,8 +2,6 @@
 
 # Exports
 
-. $ANDROID_BUILD_TOP/vendor/deso/tools/colors
-
 export Changelog=Changelog.html
 
 if [ -f $Changelog ];
@@ -18,7 +16,7 @@ echo ${bldppl}"Generating changelog..."${txtrst}
 
 cat $ANDROID_BUILD_TOP/vendor/deso/tools/changelog_header.fhtml > $Changelog
 
-for i in $(seq 5)
+for i in $(seq 10)
 do
 export After_Date=`date --date="$i days ago" +%m-%d-%Y`
 k=$(expr $i - 1)
@@ -34,7 +32,9 @@ k=$(expr $i - 1)
 
         while read line; do
             first=$(echo $line | awk '{ print $1 }')
-            if [[ $first == project* ]]; then
+            if [[ $first == "" ]]; then
+                echo > /dev/null # the project line has no commits done within timeframe so it comes back null
+            elif [[ $first == project* ]]; then
                 echo '<br />' >> $Changelog
                 echo "<h3>$(echo $line | sed 's/project //g')</h3>" >> $Changelog
                 echo '<br />' >> $Changelog
@@ -55,5 +55,5 @@ cat $ANDROID_BUILD_TOP/vendor/deso/tools/changelog_footer.fhtml >> $Changelog
 echo >> $Changelog
 
 cp $Changelog $OUT/system/etc/
-rm $Changelog
+#rm $Changelog
 rm /tmp/changelog.tmp
