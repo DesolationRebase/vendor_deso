@@ -78,7 +78,8 @@ PRODUCT_PACKAGES += \
     NovaLauncher \
     OmniJaws \
     OmniStyle \
-    DesoHeaders
+    DesoHeaders \
+    WelcomeBack
 
 ifneq ($(HAS_DEVICE_CAM),true)
 PRODUCT_PACKAGES += OpenCamera
