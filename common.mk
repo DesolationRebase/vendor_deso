@@ -257,3 +257,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.deso.buildtype=$(DESO_BUILD_TYPE)
 
 $(call inherit-product-if-exists, vendor/extra/product.mk)
+
+# include definitions for SDCLANG
+include device/qcom/common/sdclang/sdclang.mk
