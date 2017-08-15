@@ -1,4 +1,3 @@
-set_stuff_for_environment
 function deso-sync() {
 
 if [ $ANDROID_BUILD_TOP == null ]; then
