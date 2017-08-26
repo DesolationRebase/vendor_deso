@@ -53,3 +53,5 @@ else
   repo sync .
 fi
 }
+
+add_lunch_combo deso_emulator-userdebug
