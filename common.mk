@@ -92,13 +92,13 @@ PRODUCT_PACKAGES += \
     Stk \
     telephony-ext
 
-PRODUCT_BOOT_JARS += \
-    org.dirtyunicorns.utils \
-    telephony-ext
+#PRODUCT_BOOT_JARS += \
+#    org.dirtyunicorns.utils \
+#    telephony-ext
 
 #DU Utils for DUI
-PRODUCT_PACKAGES += \
-    org.dirtyunicorns.utils
+#PRODUCT_PACKAGES += \
+#    org.dirtyunicorns.utils
 
 # Live Wallpapers
 PRODUCT_PACKAGES += \
@@ -213,9 +213,9 @@ endif
 
 # Versioning System
 # Desolation first version.
-PRODUCT_VERSION_MAJOR = 7.1.2
-PRODUCT_VERSION_MINOR = v0.3
-#PRODUCT_VERSION_MAINTENANCE = N
+PRODUCT_VERSION_MAJOR = 8.0.0
+PRODUCT_VERSION_MINOR = v1.0
+#PRODUCT_VERSION_MAINTENANCE = O
 ifdef DESO_BUILD_EXTRA
     DESO_POSTFIX := -$(DESO_BUILD_EXTRA)
 else
